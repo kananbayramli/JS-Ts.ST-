@@ -36,20 +36,28 @@
 //     console.log("tek ve pozitiv reqem");
 // }
 
-var x = 6 , y = 5, z = 3;
+// var x = 6 , y = 5, z = 3;
+
+// if(x >= y && x >= z)
+// {
+//     console.log("x is max");
+// }
+// else if(y >= x && y >= z)
+// {
+//     console.log("y is MAX");
+// }
+// else{
+//     console.log("z IS MAX");
+// }
 
 
-if(x >= y && x >= z)
-{
-    console.log("x is max");
-}
-else if(y >= x && y >= z)
-{
-    console.log("y is MAX");
-}
-else{
-    console.log("z IS MAX");
-}
+var ad = "Kenan";
+var soyad = "Bayram";
+var yas = 66;
+var seher = "Baki";
+var pensiya = 65 - yas;
+var pensiyaMesaj = pensiya > 0 ? `Pensiyama ${pensiya} il qaldi` : "Artiq pensiyadayam"
 
+let mesaj = `Menim adim ${ad}dir ve soyadim ${soyad}dir. Menim ${yas} yasim var. Men ${seher}da yashayiram. ${pensiyaMesaj} `;
 
-
+console.log(mesaj);
