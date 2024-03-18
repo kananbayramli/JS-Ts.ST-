@@ -1,5 +1,6 @@
 // var kecid = 50;
 
+
 // var stu1Name = "Kenan Bayram";
 // var stu1Birth = "1995";
 // var noteMath = 70;
@@ -51,13 +52,38 @@
 // }
 
 
-var ad = "Kenan";
-var soyad = "Bayram";
-var yas = 66;
-var seher = "Baki";
-var pensiya = 65 - yas;
-var pensiyaMesaj = pensiya > 0 ? `Pensiyama ${pensiya} il qaldi` : "Artiq pensiyadayam"
+// var ad = "Kenan";
+// var soyad = "Bayram";
+// var yas = 66;
+// var seher = "Baki";
+// var pensiya = 65 - yas;
+// var pensiyaMesaj = pensiya > 0 ? `Pensiyama ${pensiya} il qaldi` : "Artiq pensiyadayam"
 
-let mesaj = `Menim adim ${ad}dir ve soyadim ${soyad}dir. Menim ${yas} yasim var. Men ${seher}da yashayiram. ${pensiyaMesaj} `;
+// let mesaj = `Menim adim ${ad}dir ve soyadim ${soyad}dir. Menim ${yas} yasim var. Men ${seher}da yashayiram. ${pensiyaMesaj} `;
 
-console.log(mesaj);
+// console.log(mesaj);
+
+let url = "https://www.kananbayram.com";
+let kursAdi = "Full Web Sayt Kursu";
+
+// url uzunlugunu tapin.
+let uzunluq = url.length;
+console.log(uzunluq);
+
+//kursadi nece sozden ibaretdir
+let list = kursAdi.split(" ");
+console.log(list.length);
+
+//url https-lemi bashliyir?
+let start = url.substring(0,5);
+let yoxla = start === "https"
+console.log(yoxla);
+
+// kurs adi icerisinde "HTML" sozu varmi?
+let yoxlaHtml = kursAdi.includes("HTML");
+console.log(yoxlaHtml);
+
+//https://www.kananbayram.com/full-web bunu duzeldin.
+var urlHelper =`${list[0].toLowerCase()}-${list[1].toLowerCase()}`
+var baseUrl = `${url}/${urlHelper}`;
+console.log(baseUrl);
