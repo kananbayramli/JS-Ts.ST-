@@ -237,3 +237,64 @@
 // console.log(say);
 
 
+/* Functions */
+
+//1- Gonderilen sozu , gonderdiyimiz say qeder ekrana yazdirin;
+
+// function ekranaYazdir(element, say)
+// {
+//     for(let i=0; i<say; i++)
+//     {
+//         console.log(element);
+//     }
+// }
+
+// ekranaYazdir("Salam", 3);
+
+
+
+
+//2- Duzbucaqlinin sahesini hesablayan function yazin;
+
+// function saheHesabla(en, uzun)
+// {
+//     return en * uzun;
+// }
+
+// console.log(saheHesabla(5,10) + " metr kvadrati");
+
+
+
+//4- Gonderilen sayinin tam bolenlerini list sheklinde geri qaytaran function yazin
+// function listQaytar(say)
+// {
+//     var list = [];
+//     for(let i=2; i < say; i++)
+//     {
+//         if(say % i == 0)
+//         {
+//             list.push(i);
+//             //list.unshift(i);
+//         }
+//     }
+//     console.log(list);
+
+// }
+// listQaytar(81);
+
+
+//5- Deyiwken sayida qebul eden toplama funksiyasi yazin;
+
+function topla()
+{
+    let result = 0;
+    for(let i = 0; i < arguments.length; i++)
+    {
+        result += arguments[i];
+    }
+    return result;
+}
+
+console.log(topla(2,3,4));
+console.log(topla(2,3));
+console.log(topla(2));
