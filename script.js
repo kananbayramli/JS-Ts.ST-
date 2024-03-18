@@ -134,46 +134,106 @@
     3- Butun sifariwlerin vergi daxil qiymetini hesablayin;
 */
 
-let sifariw1 = {
-    "sif_id" : 102,
-    "sif_tarix": "30.12.2024",
-    "odeme" : "kart",
-    "kargo_adres":{
-        "Kuce" : "Anashkin",
-        "Rayon" : "Sabunchu",
-        "Sheher" : "Baki"
-    },
-    "products" : [
-        {
-            "pro_id" : 6,
-            "pro_Name" : "Samsung s 26",
-            "pro_price" : 2300
-        }
-    ]
-}
+// let sifariw1 = {
+//     "sif_id" : 102,
+//     "sif_tarix": "30.12.2024",
+//     "odeme" : "kart",
+//     "kargo_adres":{
+//         "Kuce" : "Anashkin",
+//         "Rayon" : "Sabunchu",
+//         "Sheher" : "Baki"
+//     },
+//     "products" : [
+//         {
+//             "pro_id" : 6,
+//             "pro_Name" : "Samsung s 26",
+//             "pro_price" : 2300
+//         }
+//     ]
+// }
 
-var sifVergiDaxil = (sifariw1.products[0].pro_price * 1.18)
+// var sifVergiDaxil = (sifariw1.products[0].pro_price * 1.18)
 
-let sifariw2 = {
-    "sif_id" : 103,
-    "sif_tarix": "31.12.2024",
-    "odeme" : "kart",
-    "kargo_adres":{
-        "Kuce" : "Anashkin",
-        "Rayon" : "Sabunchu",
-        "Sheher" : "Baki"
-    },
-    "products" : [
-        {
-            "pro_id" : 7,
-            "pro_Name" : "IPhone 13 Pro Max",
-            "pro_price" : 3300
-        }
-    ]
-}
+// let sifariw2 = {
+//     "sif_id" : 103,
+//     "sif_tarix": "31.12.2024",
+//     "odeme" : "kart",
+//     "kargo_adres":{
+//         "Kuce" : "Anashkin",
+//         "Rayon" : "Sabunchu",
+//         "Sheher" : "Baki"
+//     },
+//     "products" : [
+//         {
+//             "pro_id" : 7,
+//             "pro_Name" : "IPhone 13 Pro Max",
+//             "pro_price" : 3300
+//         }
+//     ]
+// }
 
-var sifVergiDaxi2 = (sifariw2.products[0].pro_price * 1.18)
-console.log(sifVergiDaxi2);
+// var sifVergiDaxi2 = (sifariw2.products[0].pro_price * 1.18)
+// console.log(sifVergiDaxi2);
 
-var totalSum = sifVergiDaxil + sifVergiDaxi2;
-console.log(`Total Sum : ${totalSum}`)
+// var totalSum = sifVergiDaxil + sifVergiDaxi2;
+// console.log(`Total Sum : ${totalSum}`)
+
+
+
+
+/*  Donguler */
+//let numbers = [1,5,8,15,4,25];
+
+
+// 1- numbers listindeki her bir elementin kvadratini yazdirin
+// for(let num of numbers)
+// {
+//     console.log(num * num);
+// }
+
+// 2- numbers listindeki hansi element 5in kvadratidir?
+// let bes = 5;
+// for(let id=0; id < numbers.length; id++ )
+// {
+//     if(Math.pow(bes, 2) == numbers[id])
+//     {
+//         console.log(numbers[id]);
+//     }
+// }
+
+// 3- numbers listindeki cut elementlerin cemini tapin.
+// var toplam = 0;
+
+// for(let i=0; i < numbers.length; i++)
+// {
+//     if(numbers[i] % 2 == 0)
+//     {
+//         toplam += numbers[i];
+//     }
+// }
+// console.log(toplam);
+
+//let products = ["iphone 12", "samsung s22", "iphone 13", "xiaomi", "samsung"];
+// 4- list icerisindeki elementleri ele edinki boyuk herf ile bashlasin
+
+// console.log(products[0][0].toUpperCase() + products[0].slice(1));
+
+// let capitalizedProducts = products.map(product => {
+//     return product.charAt(0).toUpperCase() + product.slice(1);
+// });
+
+// console.log(capitalizedProducts);
+
+
+// 5- product listinde samsung adi kecen nece product var?
+// var say = 0;
+// for(var item of products)
+// {
+//     if(item.includes("samsung"))
+//     {
+//         say++;
+//     }
+// }
+// console.log(say);
+
+
