@@ -8,36 +8,51 @@
 </head>
 <body>
 
-    <div class="card-header">
-        <h3 class="cart-title h1" id="title">To Do App</h3>
-    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        To Do App
+                    </div>
+                </div>
 
-    <ul id="task-list">
-        <li class="task">Plan 1</li>
-        <li class="task">Plan 2</li>
-        <li class="task">Plan 3</li>
-    </ul>
+                <div class="card mt-3">
+                    <ul id="task-list" class="list-group list-group-flush">
+                        <li class="task list-group-item">
+                            <div class="form-check">
+                                <input type="checkbox" id="1" class="form-chekc-input">
+                                <label for="1" class="form-chekc-label">Plan 1</label>
+                            </div>
+                        </li>
+                        <li class="task list-group-item">
+                            <div class="form-check">
+                                <input type="checkbox" id="2" class="form-chekc-input">
+                                <label for="2" class="form-chekc-label">Plan 2</label>
+                            </div>
+                        </li>                        
+                        <li class="task list-group-item">
+                            <div class="form-check">
+                                <input type="checkbox" id="3" class="form-chekc-input">
+                                <label for="3" class="form-chekc-label">Plan 3</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script>
         let result;
 
         ul = document.getElementById("task-list");
-        result = ul.children; //butun child elementler getirir
-        result = ul.children[0]; //birinci elementi getirir
-        result = ul.firstElementChild; //birinci elementi getirir
-        result = ul.lastElementChild;  //sonuncu elementi getirir
- 
-        result = document.getElementById("title").parentElement; // ana elementi bize getirir - cart-headeri
+        // result = ul.querySelector(".task").nextElementSibling; //plan2
 
-        //nextElementSibling previousElementSibling, ozunnen evvelki ve sonraki elementi secmek ucun istifade olunur
-        result = document.querySelector(".task").nextElementSibling; //plan2
-        result = document.querySelector(".task").nextElementSibling.nextElementSibling; //plan 3
-        result = document.querySelector(".task").nextElementSibling.nextElementSibling.previousElementSibling; //plan 2
-
-
-
-
+        result = ul.children; //list kimi butun elementleri getirdi
+        result = ul.children[0].children[0].children[0].checked = true; //plan1 -i iwareledik
+        result = ul.children[0].nextElementSibling.children[0].children[0].checked = true;
         console.log(result); 
     </script>
 </body>
