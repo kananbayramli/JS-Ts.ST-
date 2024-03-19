@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        To Do App
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" id="txtTaskName" class="form-control">
+                                <button type="submit" class="btn btn-primary" id="btnAddNewTask">
+                                    Add
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <button type="submit" id="btnClear" class="btn btn-danger  float-end">Clear</button>
+                    </div>
+                    <ul id="task-list" class="list-group list-group-flush">
+                        <!-- scriptden gelir -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let planList = [
+            {"id":1, "planName":"Plan 1"},
+            {"id":2, "planName":"Plan 2"},
+            {"id":3, "planName":"Plan 3"},
+            {"id":4, "planName":"Plan 4"},
+        ];
+
+        ul = document.getElementById("task-list");
+
+        let count = ul.children.length;  //ul altindaki elementlerin sayi 1
+
+        for(var plan of planList)
+        {
+            let li = `
+                <li class="task list-group-item">
+                    <div class="form-check">
+                        <input type="checkbox" id="${plan.id}" class="form-chekc-input">
+                        <label for="${plan.id}" class="form-chekc-label">${plan.planName}</label>
+                    </div>
+                </li>
+        `;
+
+        ul.insertAdjacentHTML("beforeend", li);   //afterbegin tersine siralayacag
+        }
+
+
+        // document.querySelector("#btnClear").addEventListener("click", newTask);
+
+        // function newTask(event)
+        // {
+        //     console.log("Clear duymesi kliklendi");
+        //     event.preventDefault();
+        // }
+
+        document.querySelector("#btnClear").addEventListener("click", newTask);
+
+        function newTask(event)
+        {
+            //console.log(event.target);
+
+            event.target.classList.add("btn-lg");
+            event.preventDefault();
+        }
+
+
+        document.querySelector("#btnAddNewTask").addEventListener("click", function(event){
+        console.log("Add duymesi kliklendi");
+
+        event.preventDefault(); //normal davranishi bagla. Yeni men Add buttonuna basdiqda type -i submit olduguna gore refresh etmelidir sehife. Ancag preventDefault bunun qarwisini alir 
+        });
+
+
+    </script>
+</body>
+</html>
