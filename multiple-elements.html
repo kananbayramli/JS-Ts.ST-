@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card-header">
+        <h3 class="card-title h1" id="title">Todo App 2</h3>
+    </div>
+
+    <ul id="task-list">
+        <li class="task">Plan 1</li>
+        <li class="task">Plan 2</li>
+        <li class="task">Plan 3</li>
+    </ul>
+
+    <ul id="task-list2">
+        <li class="task">Plan 1</li>
+        <li class="task">Plan 2</li>
+        <li class="task">Plan 3</li>
+    </ul>
+
+    <script>
+        let result;
+
+        // result = document.getElementsByClassName("task")[0]; //plan 1
+        // result = document.getElementsByClassName("task")[1]; //plan 2
+
+
+        //taskList = document.getElementsByClassName("task");
+        // for(let i=0; i<taskList.length; i++)
+        // {
+        //     console.log(taskList[i]);
+        // }
+
+        // for(var index in taskList)
+        // {
+        //     console.log(taskList[index]);
+        // }
+
+        // document.querySelector("#title").style.color="blue";
+
+        document.getElementById("title").style.color = "red";
+
+        //taskList = document.getElementsByClassName("task");
+
+        // taskList = document.getElementsByTagName("li"); //butun li-leri sececek
+
+        // ul = document.querySelector("#task-list");  //secdiyimiz ul altindaki li-leri secer
+        // taskList = ul.getElementsByTagName("li");
+
+        taskList = document.querySelectorAll("#task-list li"); //daha qisa yolu
+
+        for(var task of taskList)
+        {
+            task.style.color = "blue";
+            task.style.fontSize = "20px";
+        }
+
+
+
+
+        //console.log(result);
+    </script>
+</body>
+</html>
