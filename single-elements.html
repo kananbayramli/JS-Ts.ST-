@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> </style>
+</head>
+<body>
+
+    <div class="card-header">
+        <h3 class="card-title h1" id="title">Todo App 2</h3>
+    </div>
+
+    <ul id="task-list">
+        <li>Plan 1</li>
+        <li>Plan 2</li>
+        <li>Plan 3</li>
+    </ul>
+
+    <script>
+        let result;
+        
+        //getelementById ve querySelector geriye ancag bir deyer donderir
+        result = document.getElementById("title");
+        result = document.getElementById("title").id;
+        result = document.getElementById("title").className;
+        result = document.getElementById("title").classList;
+
+
+        document.getElementById("title").style.fontSize = "35px";
+        document.getElementById("title").style.color = "red";
+        //document.getElementById("title").style.display = "none";
+
+        document.getElementById("title").innerText = "To Do App";
+        //document.getElementById("title").innerHTML = "<li>Salam</li>"
+
+        //querySelector ilk tapdigi elementi gonderir
+        result = document.querySelector("#title");
+        result = document.querySelector(".card-title");
+        result = document.querySelector("div");
+
+        result = document.querySelector("li"); //Plan 1
+        result = document.querySelector("li:first-child"); //Plan 1 
+        result = document.querySelector("li:last-child"); //Plan 3 
+        result = document.querySelector("li:nth-child(2)"); //Plan 2
+
+
+        console.log(result);
+    </script>
+
+</body>
+</html>
