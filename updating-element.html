@@ -19,14 +19,7 @@
 
                 <div class="card mt-3">
                     <ul id="task-list" class="list-group list-group-flush">
-
-                        <!-- <li class="task list-group-item">
-                            <div class="form-check">
-                                <input type="checkbox" id="1" class="form-chekc-input">
-                                <label for="1" class="form-chekc-label">Plan 1</label>
-                            </div>
-                        </li> -->
-
+                        <!-- scriptden gelir -->
                     </ul>
                 </div>
             </div>
@@ -35,8 +28,6 @@
 
 
     <script>
-
-        //"use-strict";  bize sehv yazanda xeta verir
 
         let planList = [
             {"id":1, "planName":"Plan 1"},
@@ -64,7 +55,19 @@
         }
 
 
+        //document.querySelector("#task-list").parentElement.remove(); //ul-nin oldugu divi sildik
+        //document.getElementById("task-list").children[0].remove(); //ul-nin icindeki birinci elementi sildik
+        //document.getElementById("task-list").children[1].remove(); //ulnin icindeki ikinci elementi sildik
 
+        //document.getElementById("task-list").removeAttribute("class"); ul-nin classini sildik
+        //var result=document.getElementById("task-list").children[1].getAttribute("class");  //task list-group-item i get eledi. Bunu if else icinde yoxlamagcun isdifade ede bilerik
+
+        //document.querySelector("#task-list").children[0].classList[1]; //list-group-item-i getirir. classList class atributunu list kimi getirir
+        document.querySelector("#task-list").children[0].classList.add("bg-success"); //class atributlarina elave element elave edirik
+        //document.querySelector("#task-list").children[0].classList.remove("bg-success"); 
+        document.querySelector("#task-list").children[0].classList.contains("bg-success");  //true ya false qaytarir. Burada true olacag
+
+        console.log();
     </script>
 </body>
 </html>
