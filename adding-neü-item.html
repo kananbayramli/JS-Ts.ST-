@@ -29,7 +29,7 @@
 
                 <div class="card mt-3">
                     <div class="card-header">
-                        <button type="submit" id="btnClear" class="btn btn-danger  float-end">Clear</button>
+                        <button type="submit" id="btnClear" class="btn btn-danger btn-sm  float-end">Clear</button>
                     </div>
                     <ul id="task-list" class="list-group list-group-flush">
                         <!-- scriptden gelir -->
@@ -49,50 +49,52 @@
             {"id":4, "planName":"Plan 4"},
         ];
 
-        ul = document.getElementById("task-list");
+        displayTasks();
 
-        let count = ul.children.length;  //ul altindaki elementlerin sayi 1
 
-        for(var plan of planList)
+        function displayTasks()
         {
-            let li = `
-                <li class="task list-group-item">
-                    <div class="form-check">
-                        <input type="checkbox" id="${plan.id}" class="form-chekc-input">
-                        <label for="${plan.id}" class="form-check-label">${plan.planName}</label>
-                    </div>
-                </li>
-        `;
+            let ul = document.getElementById("task-list");    
+            ul.innerHTML = "";
+            for(var plan of planList)
+            {
+                let li = `
+                    <li class="task list-group-item">
+                        <div class="form-check">
+                            <input type="checkbox" id="${plan.id}" class="form-chekc-input">
+                            <label for="${plan.id}" class="form-check-label">${plan.planName}</label>
+                        </div>
+                    </li>
+            `;
 
-        ul.insertAdjacentHTML("beforeend", li);   //afterbegin tersine siralayacag
+                ul.insertAdjacentHTML("beforeend", li);   
+            }
         }
 
-
-        // document.querySelector("#btnClear").addEventListener("click", newTask);
-
-        // function newTask(event)
-        // {
-        //     console.log("Clear duymesi kliklendi");
-        //     event.preventDefault();
-        // }
-
-        document.querySelector("#btnClear").addEventListener("click", newTask);
+        document.querySelector("#btnAddNewTask").addEventListener("click", newTask);
+        document.querySelector("#btnAddNewTask").addEventListener("keypress", function(){
+            if(event.key == "Enter")
+            {
+                document.getElementById("btnAddNewTask").click();
+            }
+        });
 
         function newTask(event)
         {
-            //console.log(event.target);
-            event.target.classList.remove("btn-danger");
-            event.target.classList.add("btn-success");
+            let taskInput = document.querySelector("#txtTaskName");
+
+            if(taskInput.value == "")
+            {
+                alert("Bolmeni bosh kece bilmersiz...");
+            }
+            else{
+                planList.push({"id":(planList.length + 1), "planName":taskInput.value});
+                taskInput.value="";
+                displayTasks();
+            }
+
             event.preventDefault();
         }
-
-
-        document.querySelector("#btnAddNewTask").addEventListener("click", function(event){
-        console.log("Add duymesi kliklendi");
-
-        event.preventDefault(); //normal davranishi bagla. Yeni men Add buttonuna basdiqda type -i submit olduguna gore refresh etmelidir sehife. Ancag preventDefault bunun qarwisini alir 
-        });
-
 
     </script>
 </body>
