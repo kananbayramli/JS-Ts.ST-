@@ -17,6 +17,10 @@
             justify-content: space-between;
         }
 
+        .task label.checked{
+            text-decoration: line-through;
+        }
+
 
     </style>
 </head>
@@ -64,10 +68,10 @@
 
 
         let planList = [
-            {"id":1, "planName":"Plan 1"},
-            {"id":2, "planName":"Plan 2"},
-            {"id":3, "planName":"Plan 3"},
-            {"id":4, "planName":"Plan 4"},
+            {"id":1, "planName":"Plan 1", "state":"completed"},
+            {"id":2, "planName":"Plan 2", "state":"completed"},
+            {"id":3, "planName":"Plan 3", "state":"pending"},
+            {"id":4, "planName":"Plan 4", "state":"pending"},
         ];
 
         displayTasks();
@@ -88,11 +92,13 @@
 
             for(var plan of planList)
             {
+                let completed =  plan.state == "completed" ? "checked" : "";
+
                 let li = `
                     <li class="task list-group-item">
                         <div class="form-check">
-                            <input type="checkbox" id="${plan.id}" class="form-check-input">
-                            <label for="${plan.id}" class="form-check-label">${plan.planName}</label>
+                            <input type="checkbox" onclick=updateStatus(this) id="${plan.id}" class="form-check-input " ${completed}>
+                            <label for="${plan.id}" class="form-check-label ${completed}" >${plan.planName}</label>
                         </div>
                         <div class="dropdown">
                             <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -179,6 +185,34 @@
             displayTasks();
         });
 
+        function updateStatus(selectedTask)
+        {
+            //console.log(selectedTask); //bize input setrini getirdiyini gorerik. Buna onclickde yazdigimiz this komek edir.
+            // console.log(selectedTask.parentElement.lastElementChild); //labeli getitir yada nextElementSibling elemek olar
+            let label = selectedTask.nextElementSibling;
+            let state;
+
+            if(selectedTask.checked)
+            {
+                label.classList.add("checked");
+                label.parentElement.parentElement.classList.add("bg-warning");
+                state = "completed";
+            }else{
+                label.classList.remove("checked");
+                label.parentElement.parentElement.classList.remove("bg-warning");
+                state = "pending";
+            }
+
+            for(let plan of planList)
+            {
+                if(plan.id == selectedTask.id){
+                    plan.state = state;
+                }
+            }
+            
+
+
+        }
 
     </script>
 </body>
